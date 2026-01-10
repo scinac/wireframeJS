@@ -152,6 +152,10 @@ body {
   transform: rotate(-6deg);
 }
 
+#renderModelText {
+  text-decoration: none;
+}
+
 .siteButton:hover {
   transform: rotate(0deg) scale(1.05);
   box-shadow: 12px 12px 0 #000;
