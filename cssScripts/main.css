@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: 'Arial Black', Impact, sans-serif;
 }
 
 body {
@@ -27,25 +26,56 @@ body {
   pointer-events: none;
 }
 
+
 #logo {
   position: absolute;
   top: 30px;
   left: 30px;
+}
+
+#logoText {
+  --s: 13px;
+  --w: 220px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
   color: #39ff14;
-}
-
-#logo h1 {
-  margin: 0;
   font-size: 32px;
+  font-weight: bold;
+  background: black;
+
+  --_m:#0000 0 calc(2*atan(.5)),#000 0 50%;
+  -webkit-mask:
+    repeating-conic-gradient(from atan(2) at 50% var(--s),var(--_m))
+     calc(2*var(--s)) calc(-1*var(--s))/calc(4*var(--s)) 100% intersect,
+    repeating-conic-gradient(from atan(-.5) at var(--s),var(--_m))
+     calc(-1*var(--s)) calc(2*var(--s))/100% calc(4*var(--s));
+  mask:
+    repeating-conic-gradient(from atan(2) at 50% var(--s),var(--_m))
+     calc(2*var(--s)) calc(-1*var(--s))/calc(4*var(--s)) 100% intersect,
+    repeating-conic-gradient(from atan(-.5) at var(--s),var(--_m))
+     calc(-1*var(--s)) calc(2*var(--s))/100% calc(4*var(--s));
+
+  transform: rotate(-3deg);
 }
 
-#logo span {
-  font-size: 18px;
+
+#descriptionBoxWrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-6deg);
+  padding: 4px;
+  background: #39ff14;
+  display: inline-block;
 }
 
 #descriptionBox { /* credits to Temani Afif link: https://verpex.com/blog/website-tips/how-to-create-a-zig-zag-box-using-css */
   --s: 38px; 
   --w: 550px;
+
 
   width: var(--w);
   aspect-ratio: 2 / 1;
@@ -66,13 +96,10 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
 
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  box-shadow: 0 0 0 4px #39ff14;
 }
 
 #descriptionText {
@@ -83,4 +110,56 @@ body {
   text-align: center;
   z-index: 2;
   position: relative; 
+}
+
+#buttonGroup {
+  position: absolute;
+  left: 48%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.siteButton {
+  position: relative;
+  width: 280px;
+  padding: 18px 22px;
+  background: #39ff14;
+  border: none;
+  color: #000;
+  font-size: 22px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 #000;
+  transform-origin: left center;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, filter 0.18s ease-out;
+}
+
+.siteButton::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 30%, 60% 100%, 20% 70%);
+}
+
+#renderModelButton {
+  transform: rotate(-6deg);
+}
+
+.siteButton:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 12px 12px 0 #000;
+  filter: drop-shadow(0 0 10px #39ff14);
+}
+
+.siteButtonText {
+  font-size: 16px;
+  opacity: 0.85;
+  margin: 0;
 }
