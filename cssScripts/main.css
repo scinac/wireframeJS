@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Arial Black', Impact, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  height: 100vh;
+}
+
+.fence {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 32px,
+      #39ff14 32px 34px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 32px,
+      #39ff14 32px 34px
+    );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+#logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: #39ff14;
+}
+
+#logo h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+#logo span {
+  font-size: 18px;
+}
