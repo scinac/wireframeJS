@@ -1,4 +1,8 @@
-#uploadModelBox {
+#uploadModelBox { 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
   position: absolute;
   top: 100px;
   left: 30px;

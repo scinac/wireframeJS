@@ -9,7 +9,7 @@ uploadInput.addEventListener('change', (event) => {
     reader.onload = (e) => {
       const objContent = e.target.result;
 
-      const m = loadOBJ(objContent); // <-- parse uploaded file
+      const m = loadOBJ(objContent);
       vs = m.vs;
       fs = m.fs.flatMap(f =>
         f.length === 3 ? [f] :
@@ -26,6 +26,13 @@ uploadInput.addEventListener('change', (event) => {
 
 const BACKGROUND = "#101010";
 const FOREGROUND = "#507533";
+
+let facesOnMode = true;
+const toggleFacesBtn = document.getElementById("toggleFacesBtn");
+
+toggleFacesBtn.addEventListener("click", () => {
+  facesOnMode = !facesOnMode;
+});
 
 const game = document.getElementById("game");
 game.width = 800;
@@ -100,7 +107,9 @@ function triangle(a, b, c) {
   ctx.lineTo(b.x, b.y);
   ctx.lineTo(c.x, c.y);
   ctx.closePath();
-  ctx.fill();
+  if (facesOnMode) {
+    ctx.fill();
+  }
   ctx.stroke();
 }
 
