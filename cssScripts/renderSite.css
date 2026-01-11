@@ -26,3 +26,9 @@
   box-shadow: 8px 8px 0 #000;
   filter: drop-shadow(0 0 8px #39ff14);
 }
+
+#game {
+  position: absolute;
+  left: 600px;
+  top: 70px;
+}
