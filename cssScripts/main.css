@@ -49,15 +49,18 @@ body {
 
 
 #logo {
+  scale: 1.2;
+  background-color: black;
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 40px;
+  left: 40px;
 }
 
 #logoText {
   --s: 13px;
   --w: 220px;
   font-family: 'Glitch', sans-serif;
+  background-color: black;
 
   display: inline-flex;
   align-items: center;
@@ -85,6 +88,7 @@ body {
 
 
 #descriptionBoxWrapper {
+  background-color: black;
   position: absolute;
   top: 50%;
   left: 0;
@@ -96,12 +100,11 @@ body {
 
 #descriptionBox { /* credits to Temani Afif link: https://verpex.com/blog/website-tips/how-to-create-a-zig-zag-box-using-css */
   --s: 38px; 
-  --w: 550px;
-
+  --w: 650px;
 
   width: var(--w);
   aspect-ratio: 2 / 1;
-  background: black;
+  background-color: black;
 
   --_m:#0000 0 calc(2*atan(.5)),#000 0 50%;
   -webkit-mask:
@@ -127,7 +130,7 @@ body {
 #descriptionText {
   font-family: 'Basketball', sans-serif;
   color: #39ff14;
-  font-size: 18px;
+  font-size: 28px;
   line-height: 1.4;
   padding: 20px;
   text-align: center;
@@ -147,7 +150,8 @@ body {
 
 .siteButton {
   position: relative;
-  width: 280px;
+  width: 380px;
+  height: 100px;
   padding: 18px 22px;
   background: #39ff14;
   border: none;
@@ -186,8 +190,9 @@ body {
 }
 
 .siteButtonText {
+  text-align: center;
   font-family: 'Break', sans-serif;
-  font-size: 26px;
+  font-size: 48px;
   opacity: 0.85;
   margin: 0;
 }
